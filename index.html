@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .card {
+            width: 600px;
+            background: linear-gradient(135deg, #f4d03f 0%, #f7dc6f 50%, #f4d03f 100%);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+        
+        .header {
+            background: #dc2626;
+            color: #fef08a;
+            padding: 15px;
+            margin: -30px -30px 25px -30px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid #d4af37;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+            z-index: -1;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 14px;
+            border-radius: 50%;
+        }
+        
+        .decorative-flowers {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .flower-left {
+            top: 120px;
+            left: 30px;
+            transform: rotate(-15deg);
+        }
+        
+        .flower-right {
+            top: 120px;
+            right: 30px;
+            transform: rotate(15deg);
+        }
+        
+        .flower {
+            font-size: 40px;
+            color: #dc2626;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .floral-decoration {
+            margin: 20px 0;
+            font-size: 30px;
+            color: #dc2626;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .date {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .verse {
+            font-size: 18px;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ceremony-details {
+            color: #dc2626;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .location {
+            color: #dc2626;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .family-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #d4af37;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .family-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .family-members {
+            font-size: 16px;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        
+        .border-decoration {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="border-decoration"></div>
+        
+        <div class="header">
+            ✱✱ ॥ प्रथम पुण्यस्मरण ॥ ✱✱
+        </div>
+        
+        <div class="decorative-flowers flower-left">
+            <div class="flower">🌹</div>
+        </div>
+        
+        <div class="decorative-flowers flower-right">
+            <div class="flower">🌹</div>
+        </div>
+        
+        <div class="photo-frame">
+            <img src="image.jpeg" alt="Memorial Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        </div>
+        
+        <div class="floral-decoration">
+            🌸🌺🌸🌺🌸🌺🌸
+        </div>
+        
+        <div class="name">
+            कै. शशिकलाबाई विश्वासराव देशमुख
+        </div>
+        
+        <div class="date">
+            मृत्यु : ०२ ऑगस्ट २०२४
+        </div>
+        
+        <div class="verse">
+            क्षणभंगुरी आमच्या मनी तुमचीच आहे आठवण<br>
+            हीच आमच्या जीवनातील अनमोल अशी सांठवण<br>
+            आमच्या आईच्या प्रथम पुण्यस्मरणाच्या या कार्यक्रमाला<br>
+            उपस्थित रहावे हि नम्र विनंती .
+        </div>
+        
+        <div class="ceremony-details">
+            प्रथम पुण्यतिथी - मंगळवार ०८ जुलै २०२५ । वेळ - ११:००
+        </div>
+        
+        <div class="location">
+            स्थळ - जवाहर कॉलनी, हिवरखेडा रोड, कन्नड.
+        </div>
+        
+        <div class="family-section">
+            <div class="family-title">
+                ✱ श्रद्धावंत ✱
+            </div>
+            <div class="family-members">
+                श्री. राजेन्द्र भिकनराव देशमुख (जावई)<br>
+                श्रीमती. शोभा रमेश देशमुख (मुलगी)<br>
+                सौ. रेखा राजेन्द्र देशमुख (मुलगी)
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
